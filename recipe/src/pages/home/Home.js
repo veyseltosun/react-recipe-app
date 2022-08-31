@@ -14,18 +14,30 @@ function Home() {
     const getData =  async () =>{
         if(query!==""){
             const result = await axios.get(url);
+            if(result.status===200){
+                // console.log("result", result.data.hits)
+                setRecipes(result.data.hits)
+            }
        
-            console.log(result)
+            // console.log(result)
+        }else{
+            alert("Please fill the form")
         }
         
 
     }
-    useEffect(()=>{
-        getData()
-    },[]);
+    // useEffect(()=>{
+    //     getData()
+    // },[]);
   return (
     <div>
-        <Header/>
+        <Header
+        setQuery={setQuery}
+        query={query}
+        getData={getData}
+        mealTypes={mealTypes}
+        setMeal={setMeal}
+        meal={meal}/>
 
     </div>
   )
