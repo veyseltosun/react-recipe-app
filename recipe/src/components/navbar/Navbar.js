@@ -7,12 +7,13 @@ import { Hamburger, Logo, MenuLink, Nav, Menu } from "./NavbarStyle";
 const Navbar = () =>{
 
     const[isOpen, setlsOpen] = useState(false);
+    
 
 
 
 
     return(
-       <Nav>
+    <Nav>
         <Logo to='/' >
             <i>{"Veysel's "}</i> <span>recipe</span>
         </Logo>
@@ -21,14 +22,18 @@ const Navbar = () =>{
             <span/>
             <span/>
         </Hamburger>
-          <Menu isOpen={isOpen}>
+        <Menu isOpen={isOpen}>
           <MenuLink to="/about">About</MenuLink>
-          <MenuLink to="https://github.com/veyseltosun">Github</MenuLink>
+          <MenuLink 
+             to={{ pathname : 'https://github.com/clarusway'}}
+             target='_blank'
+             rel="noopener noreferrer"
+              >Github</MenuLink>
           <MenuLink to="login">Logout</MenuLink>
 
         </Menu>
     
-       </Nav>
+    </Nav>
     )
 }
 
