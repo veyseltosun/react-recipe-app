@@ -1,6 +1,7 @@
 import React, {useEffect, useState}from 'react'
 import Header from '../../components/header/Header'
 import axios from "axios";
+import { MainContainer, RecipeCard } from './HomeStyle';
 
 
 const mealTypes = ["Breakfast", "Lunch", "Dinner", "Snack", "Teatime"];
@@ -38,6 +39,17 @@ function Home() {
         mealTypes={mealTypes}
         setMeal={setMeal}
         meal={meal}/>
+
+        {recipes ? (
+             <MainContainer>
+             {recipes?.map((recipe,index)=>(
+                 <RecipeCardComp key={index} recipe={recipe?.recipe}/>
+             ))}
+ 
+         </MainContainer>
+
+        ) : null }
+       
 
     </div>
   )
