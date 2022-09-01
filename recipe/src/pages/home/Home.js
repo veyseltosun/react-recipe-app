@@ -1,7 +1,8 @@
 import React, {useEffect, useState}from 'react'
 import Header from '../../components/header/Header'
 import axios from "axios";
-import { MainContainer, RecipeCard } from './HomeStyle';
+import { MainContainer} from './HomeStyle';
+import RecipeCardComp from './RecipeCardComp';
 
 
 const mealTypes = ["Breakfast", "Lunch", "Dinner", "Snack", "Teatime"];
