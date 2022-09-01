@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate} from "react-router-dom";
 import {
-  LoginContainer,
+  
   FormContainer,
   Header,
   StyledInput,
@@ -20,17 +20,17 @@ const Login = ({ setIsAuth, isAuth }) => {
     navigate("/");
   };
   return (
-    <LoginContainer>
+    
       <FormContainer>
         <StyledImg src={mealSvg} alt="meal" />
-        <Header>{"<ed8en/>"} Recipe</Header>
+        <Header>{"Veysel's"} Recipe</Header>
         <StyledForm onSubmit={handleSubmit}>
           <StyledInput type="text" placeholder="Username" required />
           <StyledInput type="password" placeholder="Password" required />
           <StyledButton type="submit">Login</StyledButton>
         </StyledForm>
       </FormContainer>
-    </LoginContainer>
+    
   );
 };
 
