@@ -1,8 +1,10 @@
 import React, {useEffect, useState}from 'react'
 import Header from '../../components/header/Header'
 import axios from "axios";
-import { MainContainer} from './HomeStyle';
+import { MainContainer,HomeImg, ImgDiv} from './HomeStyle';
 import RecipeCardComp from './RecipeCardComp';
+import homeSvg from "../../assets/home.svg";
+
 
 
 const mealTypes = ["Breakfast", "Lunch", "Dinner", "Snack", "Teatime"];
@@ -49,7 +51,11 @@ function Home() {
  
          </MainContainer>
 
-        ) : null }
+        ) : (
+            <ImgDiv>
+              <HomeImg src={homeSvg} />
+            </ImgDiv>
+          ) }
        
 
     </div>

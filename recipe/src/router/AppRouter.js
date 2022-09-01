@@ -6,6 +6,7 @@ import Home from "../pages/home/Home";
 import About from "../pages/about/About";
 
 
+
 const AppRouter = () => {
     return(
         <BrowserRouter>
@@ -16,6 +17,7 @@ const AppRouter = () => {
          
           <Route path="/" exact element = {<Home/>}/>
           <Route path="/about" exact element = {<About/>}/>
+          
           
 
          </Routes>
