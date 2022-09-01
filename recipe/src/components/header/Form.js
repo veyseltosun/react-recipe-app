@@ -6,8 +6,12 @@ const Form = ({setQuery, query, getData, mealTypes, setMeal, meal})=>{
  const handleSubmit = (e) =>{
     e.preventDefault();
     // console.log(handleSubmit);
-    console.log("query", query);
+    console.log("query: meal", query, meal);
     getData()
+ }
+
+ const handChange = (e) =>{
+    setMeal(e.target.value);
  }
     return(
         <FormContainer onSubmit={handleSubmit}>
