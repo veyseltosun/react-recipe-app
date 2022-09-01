@@ -13,7 +13,14 @@ const Form = ({setQuery, query, getData, mealTypes, setMeal, meal})=>{
         <FormContainer onSubmit={handleSubmit}>
             <FoodInput type="text" placeholder="Search" value={query} onChange={(e) =>setQuery(e.target.value)}/>
             <Button>Search</Button>
-            <Select name="mealTypes" id="mealTypes"></Select>
+            <Select name="mealTypes" id="mealTypes" onChange={handChange}>
+                {mealTypes?.map((item, index) => (
+                    <option value ={item.toLowerCase()} key={index}>{item}</option>
+
+                ))}
+                    
+                         
+            </Select>
         </FormContainer>
     );
 };
