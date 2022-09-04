@@ -1,19 +1,25 @@
-import { useNavigate } from "react-router-dom";
+import {useNavigate } from "react-router-dom";
 import { RecipeCard, RecipeImage, Button, RecipeHeader } from "./HomeStyle";
 import defaultImg from "../../assets/default-image.jpg";
 
 const RecipeCardComp = ({ recipe }) => {
   let navigate = useNavigate();
-
-  function moreClick({
+  
+  const moreClick =()=>{
     
-  }) {
-        this.props.navigate("/details"),{recipe:recipe}
+    navigate("/details",{
+      recipe: recipe
+    });
+  };
+      
         
+        
+  
+  
+  
+    
 
-
-
-    }
+    
 
   return (
     <RecipeCard>
