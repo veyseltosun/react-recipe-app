@@ -5,8 +5,11 @@ import defaultImg from "../../assets/default-image.jpg";
 const RecipeCardComp = ({ recipe }) => {
   let navigate = useNavigate();
 
-  function moreClick() {
-        navigate("/details");
+  function moreClick({
+    
+  }) {
+        this.props.navigate("/details"),{recipe:recipe}
+        
 
 
 
