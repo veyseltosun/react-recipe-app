@@ -3,7 +3,7 @@ import { RecipeCard, RecipeImage, Button, RecipeHeader } from "./HomeStyle";
 import defaultImg from "../../assets/default-image.jpg";
 
 const RecipeCardComp = ({ recipe }) => {
-  let navigate = useNavigate();
+  let navigate = useNavigate('/details');
   
   const moreClick =()=>{
     
