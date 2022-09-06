@@ -8,7 +8,7 @@ const RecipeCardComp = ({ recipe }) => {
   const moreClick =()=>{
     
     navigate("/details",{
-      recipe: recipe
+      state: recipe
     });
   };
       
