@@ -1,9 +1,16 @@
 import { Navigate } from 'react-router-dom';
-// import Login from '../pages/login/Login';
+import Navbar from '../components/navbar/Navbar';
 
-const PrivateRouter = (Component) => {
-    const auth = false; //your logic
+const PrivateRouter = ({ children, isAuth }) => {
+    if (!isAuth) {
+        return <Navigate to="/login" />;
+    }
 
-    return auth ? <Component /> : <Navigate to="/login" />
-}
+    return (
+        <>
+            <Navbar />
+            {children}
+        </>
+    );
+};
 export default PrivateRouter;

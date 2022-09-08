@@ -1,35 +1,50 @@
-import React, { Fragment } from "react";
-// import { useState } from "react";
-import Navbar from "../components/navbar/Navbar";
+import React, { useState } from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Home from '../pages/home/Home';
+import About from '../pages/about/About';
+import Login from '../pages/login/Login';
+import Details from '../pages/detail/Details';
+import PrivateRouter from './PrivateRouter';
 
-import { BrowserRouter, Route, Routes } from "react-router-dom"
-import Home from "../pages/home/Home";
-import About from "../pages/about/About";
-import Login from "../pages/login/Login";
-import Details from "../pages/detail/Details";
-import PrivateRouter from "./PrivateRouter";
-
-
-    // const [isAuth, setIsAuth] = useState(false);
-
-    const AppRouter = () => {
-        return (
-          < BrowserRouter>
-            <Fragment>
-              <Navbar/>
-              <Routes>
-               
-                <Route path="/home" element={<Home />} />
-                <Route path="/login" element={<PrivateRouter Component={Login} />} />
-                
-                <Route exact path='/about' element={<About/>}/>
-                <Route exact path='/details' element={<Details/>}/>
-               
-              </Routes>
-            </Fragment>
-          </ BrowserRouter>
-          
-        );
-    }
+const AppRouter = () => {
+    const [isAuth, setIsAuth] = useState(false);
+    return (
+        <BrowserRouter>
+            <Routes>
+                <Route
+                    path="/login"
+                    element={<Login setIsAuth={setIsAuth} />}
+                />
+                <Route
+                    path="/about"
+                    element={
+                        <PrivateRouter isAuth={isAuth}>
+                            <About />
+                        </PrivateRouter>
+                    }
+                    isAuth={isAuth}
+                />
+                <Route
+                    path="/details"
+                    element={
+                        <PrivateRouter isAuth={isAuth}>
+                            <Details />
+                        </PrivateRouter>
+                    }
+                    isAuth={isAuth}
+                />
+                <Route
+                    path="/"
+                    element={
+                        <PrivateRouter isAuth={isAuth}>
+                            <Home />
+                        </PrivateRouter>
+                    }
+                    isAuth={isAuth}
+                />
+            </Routes>
+        </BrowserRouter>
+    );
+};
 
 export default AppRouter;
