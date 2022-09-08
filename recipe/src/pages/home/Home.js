@@ -11,6 +11,7 @@ const mealTypes = ["Breakfast", "Lunch", "Dinner", "Snack", "Teatime"];
 const APP_ID = "e62b0b0f"
 const APP_KEY = "3e90d6f17a2e7fd7004bfb5942623bae"
 function Home() {
+    // const [query, setQuery] = useState();
     const [query, setQuery] = useState("apple");
     const [recipes, setRecipes] = useState();
     const [meal, setMeal] = useState(mealTypes[0].toLowerCase());

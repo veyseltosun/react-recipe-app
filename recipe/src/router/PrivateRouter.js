@@ -1,24 +1,9 @@
-import React from "react";
-import { Redirect, Route } from "react-router-dom";
+import { Navigate } from 'react-router-dom';
+// import Login from '../pages/login/Login';
 
-const PrivateRouter = ({ component: Component, isAuth, ...rest }) => {
-  return (
-    <Route
-      {...rest}
-      render={(props) =>
-        isAuth ? (
-          <Component {...props} />
-        ) : (
-          <Redirect
-            to={{
-              pathname: "/login",
-              state: { from: location.state },
-            }}
-          />
-        )
-      }
-    />
-  );
-};
+const PrivateRouter = (Component) => {
+    const auth = false; //your logic
 
+    return auth ? <Component /> : <Navigate to="/login" />
+}
 export default PrivateRouter;
